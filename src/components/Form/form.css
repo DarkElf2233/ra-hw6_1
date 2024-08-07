@@ -5,15 +5,15 @@
 }
 
 .form-group1 {
-    top: 0;
+    /* top: 0;
     left: 49px;
-    position: absolute;
+    position: absolute; */
 }
 
 .form-group2 {
-    right: 79px;
-    top: 0;
-    position: absolute;
+    /* right: 79px;
+    top: 0; */
+    /* position: absolute; */
 }
 
 label {
@@ -30,8 +30,8 @@ input {
 }
 
 button {
-    position: absolute;
+    /* position: absolute;
     top: 28px;
-    right: 20px;
+    right: 20px; */
     padding: 6px 12px;
 }
