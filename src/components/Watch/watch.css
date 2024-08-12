@@ -1,0 +1,11 @@
+.watch {
+    text-align: left;
+}
+
+.watch__title {
+    font-weight: 500;
+}
+
+.watch__time {
+    font-size: 20px;
+}

@@ -1,11 +1,24 @@
-import React from 'react'
+import { useState, useEffect } from "react";
 
 import './watch.css'
 
-export const Watch = () => {
+const moment = require('moment');
+
+export const Watch = ({ watch }) => {
+  const [time, setTime] = useState(moment().utc().utcOffset(watch.timeZone * 60).format('HH:MM:ss'));
+
+  useEffect(() => {
+    const itervalId = setInterval(() => {
+      setTime(moment().utc().utcOffset(watch.timeZone * 60).format('HH:MM:ss'))
+    }, 1000)
+
+    return () => clearInterval(itervalId);
+  }, [time, watch.timeZone])
+
   return (
-    <div>
-        
+    <div className="watch">
+      <h2 className="watch__title">{watch.title}</h2>
+      <p className="watch__time">{time}</p>
     </div>
   )
 }

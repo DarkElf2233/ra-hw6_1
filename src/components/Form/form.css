@@ -1,37 +1,32 @@
 .form {
-    width: 470px;
-    height: 50px;
-    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    margin: 35px;
+    width: 570px;
 }
 
-.form-group1 {
-    /* top: 0;
-    left: 49px;
-    position: absolute; */
-}
-
-.form-group2 {
-    /* right: 79px;
-    top: 0; */
-    /* position: absolute; */
+.form-group {
+    margin-right: 5%;
+    width: 37.5%;
 }
 
 label {
-    font-size: 16px;
+    display: block;
+    font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
-    display: block;
 }
 
 input {
-    height: 24px;
-    width: 157px;
-    font-size: 18px;
+    height: 25px;
+    font-size: 17px;
 }
 
-button {
-    /* position: absolute;
-    top: 28px;
-    right: 20px; */
-    padding: 6px 12px;
+.btn {
+    font-size: 15px;
+
+    margin-top: auto;
+    height: 30.3px;
+    width: 15%;
 }

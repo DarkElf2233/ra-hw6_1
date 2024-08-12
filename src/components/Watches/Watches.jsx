@@ -2,10 +2,14 @@ import React from 'react'
 
 import './watches.css'
 
-export const Watches = () => {
+import { Watch } from '../Watch'
+
+export const Watches = ({ watches, handleDelete }) => {
   return (
-    <div>
-        
+    <div className='watches'>
+      {watches.map((watch) => (
+        <Watch watch={watch} handleDelete={handleDelete} />
+      ))}
     </div>
   )
 }
