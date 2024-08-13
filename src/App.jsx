@@ -16,8 +16,13 @@ class App extends Component {
     this.handleFormData = this.handleFormData.bind(this)
   }
 
-  handleDelete = () => {
+  handleDelete = (el) => {
+    const titleToDelete = el.target.closest('.watch').querySelector('.watch__title').textContent
 
+    this.listOfData = this.listOfData.filter(item => item.title !== titleToDelete)
+    this.setState({
+      data: this.listOfData
+    })
   }
 
   handleFormData = (data) => {
