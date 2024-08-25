@@ -1,20 +1,16 @@
 import "./form.css";
 
 export const Form = ({ handleFormData }) => {
+  const availableTitles = ['London', 'Tokyo', 'Moscow', 'New York']
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const availableTitles = ['London', 'Tokyo', 'Moscow', 'New York']
     const title = e.target[0].value
-    const timeZone = Number(e.target[1].value.split('UTC')[1])
-    e.target[0].value = ''
+    console.log(title)
+    const timeZone = Number(e.target[1].value)
+    console.log(timeZone)
     e.target[1].value = ''
-
-    if (!availableTitles.includes(title)) return
-
-    if (isNaN(timeZone)) return
-
-    if (timeZone > 14 || timeZone < -12) return
 
     handleFormData({ title: title, timeZone: timeZone })
   };
@@ -23,12 +19,16 @@ export const Form = ({ handleFormData }) => {
     <form className="form" autoComplete="false" onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="title">Название</label>
-        <input type="text" id="title" name="title" required />
+        <select name="title" id="title">
+          {availableTitles.map((title) => (
+            <option value={title}>{title}</option>
+          ))}
+        </select>
       </div>
 
       <div className="form-group">
-        <label htmlFor="time-zone">Временная зона</label>
-        <input type="text" id="time-zone" name="time-zone" required />
+        <label htmlFor="time-zone">Временная зона (UTC)</label>
+        <input type="number" id="time-zone" name="time-zone" min={-12} max={14} step={1} required />
       </div>
       <button className="btn" type="submit">
         Добавить
@@ -36,3 +36,4 @@ export const Form = ({ handleFormData }) => {
     </form>
   );
 };
+

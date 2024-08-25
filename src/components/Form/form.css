@@ -18,8 +18,17 @@ label {
     margin-bottom: 10px;
 }
 
+input, select {
+    width: 100%;
+}
+
 input {
-    height: 25px;
+    height: 22px;
+    font-size: 17px;
+}
+
+select {
+    height: 28px;
     font-size: 17px;
 }
 
